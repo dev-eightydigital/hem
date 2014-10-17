@@ -1,0 +1,95 @@
+<!doctype html>
+<html ng-app="mainMod">
+<head>
+  <title>Make Your Own Table</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/angular.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+
+<!-- <div ng-controller="modalController as modal">
+  {{curStep = modal.current_step}}
+  > {{curStep}}
+</div>
+
+
+<div>
+  <input type="text" ng-model="sample">
+  <p ng-bind="sample"></p>
+</div> -->
+
+  <header>
+    <!-- <img src="#" alt="Page Logo" class="sitelogo"> -->
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span3">
+          <h1 class="sitelogo"><a href="#">Site Logo</a></h1>
+        </div>
+        <!-- Logo -->
+        <div class="span9">
+          <div class="nav_menu">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Company</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- header -->
+
+  <div class="container row-btn">
+    <div class="row-fluid">
+      <div class="span12" ng-controller="mainController as mainCtrl">
+        <button class="btn-gen btn1"
+            ng-click="mainCtrl.showTable(); mainCtrl.log()">Create a Table</button>
+        <!-- popup -->
+        <div ng-model="curStep" ng-init="curStep='page1.html'"></div>
+
+        <div>
+          <div class="disableBG"
+            ng-class="mainCtrl.createTable ? 'popup_on' : 'popup_off' "
+            ng-click="mainCtrl.hideTable(); mainCtrl.log();"
+          ></div>
+          <div ng-class="mainCtrl.createTable ? 'popup_on' : 'popup_off'" class="modal-wrapper">
+            <div class="modal-outer" ng-controller="modalController as modal">
+              <div class="modal-inner" ng-include src="modal.current_step"></div>
+            </div>
+          </div>
+        </div>
+        <!-- popup -->
+      </div>
+    </div>
+  </div>
+  <!-- row-btn -->
+
+  <div class="album-thumbnail container">
+    <div class="row-fluid">
+      <div class="span3">
+        <a href="#"><img src="images/tables/1/dec4d546-48ee-4829-8067-2f85839141d8.jpg" alt=""></a>
+      </div>
+      <div class="span3">
+        <a href="#"><img src="images/tables/4/comfortable and elegant design a table with Birch wood.jpg" alt=""></a>
+      </div>
+      <div class="span3">
+        <a href="#"><img src="images/tables/3/1030-81110.jpg" alt=""></a>
+      </div>
+      <div class="span3">
+        <a href="#"><img src="images/tables/2/lovely-sweet-furniture-coffee-table.jpg" alt=""></a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

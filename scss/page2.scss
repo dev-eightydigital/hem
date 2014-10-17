@@ -1,0 +1,34 @@
+$doneColor: #47b6b2;
+$doneBG: #3b7b79;
+
+.step_marker{
+  ul{
+    li.step-done{
+      span{
+        background: $doneColor;
+        color: #fff;
+        cursor: pointer;
+
+        a{
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }//li
+    li.step-done:after{
+      border-bottom-color: $doneBG;
+    }
+  }// ul
+}//step_marker
+
+.form-step2{
+  input[type='text']{
+    margin-top: 50px;
+    font-weight: normal;
+    font-size: .9em;
+    padding: 3px 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #111;
+  }
+}
