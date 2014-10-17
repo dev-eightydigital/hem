@@ -1,0 +1,16 @@
+.send-form{
+  margin-top: 30px;
+  
+  div{
+    margin-bottom: 5px;
+
+    label{
+      width: 150px;
+      font-size: 1em;
+      font-weight: normal;
+    }
+    input[type='text'], input[type='email']{
+      padding: 3px;
+    }
+  }
+}

@@ -241,4 +241,15 @@ ul.select-material {
       border: 1px solid #ccc;
       border-radius: 9px; }
 
+.send-form {
+  margin-top: 30px; }
+  .send-form div {
+    margin-bottom: 5px; }
+    .send-form div label {
+      width: 150px;
+      font-size: 1em;
+      font-weight: normal; }
+    .send-form div input[type='text'], .send-form div input[type='email'] {
+      padding: 3px; }
+
 /*# sourceMappingURL=style.css.map */
