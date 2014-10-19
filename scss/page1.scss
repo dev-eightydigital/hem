@@ -1,4 +1,5 @@
 $activeStep: #47b6b2;
+$imageBG: black;
 .step, .step1{
   border: 1px solid #ccc;
   padding: 0px 0px 20px 0px;
@@ -6,12 +7,17 @@ $activeStep: #47b6b2;
   .furniture-list{
     margin-bottom: 20px;
 
-    .span3{
+    .image_wrapper{
       text-align: center;
       position: relative;
       height: 200px;
       overflow: hidden;
-      background: #efefef;
+      background: $imageBG;
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
     }
     img{
       width: 100%;
@@ -26,7 +32,8 @@ $activeStep: #47b6b2;
       font-size: 1em;
     }
 
-  }
+
+  }// \.furniture-list
 
   .btn-next{
     margin-bottom: 30px;
