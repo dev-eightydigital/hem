@@ -27,11 +27,6 @@
     this.custom_specs = [
       { 'step1': '', }, //furniture type
     ];
-    this.step1_selected = 0;
-    this.set_step1_selected = function(nth){
-      this.step1_selected = nth;
-    };
-
   });
   // modalController
 })();

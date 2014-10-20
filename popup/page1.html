@@ -23,56 +23,84 @@
 
   <div class="container alignright row-btn">
     <div class="row-fluid">
-      <div class="span12">{{modal.curUrl()}}
+      <div class="span12">
         <button class="btn-gen btn-next" href="#step-2" ng-click="modal.current_step = modal.step['step2'];">Next</button>
       </div>
     </div>
   </div>
-<!--
-  <div class="container">
-    <div class="row-fluid">
 
-    </div>
-  </div> -->
-
-  <div class="container furniture-list">
+  <div class="container furniture-list" ng-controller="modalController as modal">
     <div class="row-fluid">
       <div class="span3">
-        <a href="#"><img src="images\furnitures\beanbag.jpeg" alt="" ng-click></a>
-        <div class="caption">Bean Bag</div>
+        <div class="image_wrapper"
+          ng-class="{selected:modal.custom_specs.step1 == 1}"
+          ng-click="modal.custom_specs.step1 = 1">
+          <a href="#">
+            <img src="..\images\furnitures\beanbag.jpeg" alt="">
+          </a>
+          <div class="caption">Bean Bag</div>
+        </div>
       </div>
       <div class="span3">
-        <a href="#"><img src="images\furnitures\chair.jpg" alt=""></a>
-        <div class="caption">Chair</div>
+        <div class="image_wrapper"
+            ng-class="{selected:modal.custom_specs.step1 == 2}"
+            ng-click="modal.custom_specs.step1 = 2">
+          <a href="#"><img src="..\images\furnitures\chair.jpg" alt=""></a>
+          <div class="caption">Chair</div>
+        </div>
       </div>
       <div class="span3">
-        <a href="#"><img src="images\furnitures\bed.jpg" alt=""></a>
-        <div class="caption">Bed</div>
+        <div class="image_wrapper"
+            ng-class="{selected:modal.custom_specs.step1 == 3}"
+            ng-click="modal.custom_specs.step1 = 3">
+          <a href="#"><img src="..\images\furnitures\bed.jpg" alt=""></a>
+          <div class="caption">Bed</div>
+        </div>
       </div>
       <div class="span3">
-        <a href="#"><img src="images\furnitures\shelf.jpg" alt=""></a>
-        <div class="caption">Shelf</div>
+        <div class="image_wrapper"
+            ng-class="{selected:modal.custom_specs.step1 == 4}"
+            ng-click="modal.custom_specs.step1 = 4">
+          <a href="#"><img src="..\images\furnitures\shelf.jpg" alt=""></a>
+          <div class="caption">Shelf</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="container furniture-list">
+  <div class="container furniture-list" ng-controller="modalController as modal">
     <div class="row-fluid">
       <div class="span3">
-        <a href="#"><img src="images\furnitures\sofa.jpg" alt=""></a>
-        <div class="caption">Sofa</div>
+        <div class="image_wrapper"
+            ng-class="{selected:modal.custom_specs.step1 == 5}"
+            ng-click="modal.custom_specs.step1 = 5">
+          <a href="#"><img src="..\images\furnitures\sofa.jpg" alt=""></a>
+          <div class="caption">Sofa</div>
+        </div>
       </div>
       <div class="span3">
-        <a href="#"><img src="images\furnitures\desk.jpg" alt=""></a>
-        <div class="caption">Desk</div>
+        <div class="image_wrapper"
+            ng-class="{selected:modal.custom_specs.step1 == 6}"
+            ng-click="modal.custom_specs.step1 = 6">
+          <a href="#"><img src="..\images\furnitures\desk.jpg" alt=""></a>
+          <div class="caption">Desk</div>
+        </div>
       </div>
       <div class="span3">
-        <a href="#"><img src="images\furnitures\bench.jpg" alt=""></a>
-        <div class="caption">Bench</div>
+        <div class="image_wrapper"
+            ng-class="{selected:modal.custom_specs.step1 == 7}"
+            ng-click="modal.custom_specs.step1 = 7">
+          <a href="#"><img src="..\images\furnitures\bench.jpg" alt=""></a>
+          <div class="caption">Bench</div>
+        </div>
       </div>
       <div class="span3">
-        <a href="#"><img src="images\furnitures\table.jpg" alt=""></a>
-        <div class="caption">Table</div>
+        <div class="image_wrapper"
+            ng-class="{selected:modal.custom_specs.step1 == 8}"
+            ng-click="modal.custom_specs.step1 = 8">
+          <a href="#"><img src="..\images\furnitures\table.jpg" alt=""></a>
+          <div class="caption">Table</div>
+        </div>
       </div>
     </div>
   </div>
