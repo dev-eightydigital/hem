@@ -57,13 +57,13 @@
         <!-- popup -->
         <div ng-model="curStep" ng-init="curStep='page1.html'"></div>
 
-        <div>
+        <div ng-controller="modalController as modal">
           <div class="disableBG"
             ng-class="mainCtrl.createTable ? 'popup_on' : 'popup_off' "
-            ng-click="mainCtrl.hideTable(); mainCtrl.log();"
+            ng-click="mainCtrl.hideTable(); modal.current_step = modal.step['step1'];"
           ></div>
           <div ng-class="mainCtrl.createTable ? 'popup_on' : 'popup_off'" class="modal-wrapper">
-            <div class="modal-outer" ng-controller="modalController as modal">
+            <div class="modal-outer">
               <div class="modal-inner" ng-include src="modal.current_step"></div>
             </div>
           </div>

@@ -1,3 +1,12 @@
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/style.css">
+
+<script src="../js/angular.min.js"></script>
+<script src="../js/script.js"></script>
+
 <div class="step">
   <div class="steptitle">
     <a href="#" ng-click="mainCtrl.hideTable(false); mainCtrl.log();"><i class="ionicons ion-android-close floatright"></i></a>
@@ -25,10 +34,7 @@
   <div class="container alignright row-btn">
     <div class="row-fluid">
       <div class="span12">
-        <button class="btn-gen btn-next" href="#step-3" 
-        ng-show=""
-        ng-click="modal.checkFields({{furniture_length}}, {{furniture_height}}); modal.current_step = modal.step['step3']"
-        >Next</button>
+        <button class="btn-gen btn-next" href="#step-3" ng-click="modal.current_step = modal.step['step3']">Next</button>
       </div>
     </div>
   </div>
@@ -40,16 +46,12 @@
         <img src="images/furnitures/table.jpg" alt="" width="100%">
         <div class="row-fluid">
           <div class="span12">
-            <label for="length"><input type="text" name="length" placeholder="Enter Length in inches" 
-                                        ng-model="furniture_length" 
-                                        ng-blur="modal.checkFields({{furniture_length}}, {{furniture_height}})">
-            </label>
+            <label for="length"><input type="number" name="length" placeholder="Enter Length in inches"></label>
           </div>
         </div>
       </div>
       <div class="span3">
-        <label for="height"><input type="text" name="height" placeholder="Enter Height in inches"
-                                        ng-model="furniture_height"></label>
+        <label for="height"><input type="text" name="height" placeholder="Enter Height in inches"></label>
       </div>
     </div>
   </div>

@@ -24,9 +24,15 @@
 
     this.current_step = this.step['step1'];
 
-    this.custom_specs = [
-      { 'step1': '', }, //furniture type
-    ];
+    this.custom_specs = [];
+
+    this.checkFields = function(length, height){
+      return (isNumeric(length) || isNumeric(height))? true : false;
+    }
+   
+    this.get_custom_specs = function(){
+      console.log(this.custom_specs);
+    };
   });
   // modalController
 })();
