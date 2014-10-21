@@ -9,7 +9,7 @@ $imageBG: black;
 
     .image_wrapper.selected{
       opacity: .8;
-      box-shadow: 0 0 10px 1px rgba(0,0,0,.8);
+      box-shadow: 0 0 10px 1px rgba(0,0,0,.4);
       border-radius: 5px; }
     .image_wrapper{
       text-align: center;
@@ -42,10 +42,13 @@ $imageBG: black;
 
   }// \.furniture-list
 
+  .button-holder{
+    min-height: 65px;
+  }
   .btn-next{
     margin-bottom: 30px;
-    box-shadow: 2px 2px 3px #ccc;
   }
+  
 }
 
 .steptitle{
