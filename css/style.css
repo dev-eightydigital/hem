@@ -245,13 +245,16 @@ ul.select-material {
   ul.select-material li {
     list-style: none;
     display: inline-block;
-    overflow: hidden;
     margin-right: 10px; }
     ul.select-material li img {
       width: 100px;
       height: 100px;
       border: 1px solid #ccc;
       border-radius: 9px; }
+  ul.select-material li.selected img {
+    border: 1px solid #999;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+    opacity: 0.8; }
 
 .send-form {
   margin-top: 30px; }

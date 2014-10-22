@@ -42,6 +42,7 @@
           <div class="span12">
             <label for="length"><input type="text" name="length" placeholder="Enter Length in inches" 
                                         ng-model="furniture_length" 
+                                        ng-init="furniture_length = modal.get_custom_specs_length() || '' "
                                         ng-bind="modal.set_custom_specs_length(furniture_length); modal.get_custom_specs()">
             </label>
           </div>
@@ -50,6 +51,7 @@
       <div class="span3">
         <label for="height"><input type="text" name="height" placeholder="Enter Height in inches"
                                         ng-model="furniture_height"
+                                        ng-init="furniture_height = modal.get_custom_specs_height() || '' "
                                         ng-bind="modal.set_custom_specs_height(furniture_height); modal.get_custom_specs()"
                                         ></label>
       </div>

@@ -5,7 +5,6 @@ ul.select-material{
   li{
     list-style: none;
     display: inline-block;
-    overflow: hidden;
     margin-right: 10px;
 
     img{
@@ -13,6 +12,14 @@ ul.select-material{
       height: 100px;
       border: 1px solid #ccc;
       border-radius: 9px;
+    }
+  }//li
+  li.selected{
+
+    img{
+      border: 1px solid #999;
+      box-shadow: 0 0 10px 1px rgba(0,0,0, .4);
+      opacity: .8
     }
   }
 }
