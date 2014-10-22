@@ -7,10 +7,10 @@
 <script src="../js/angular.min.js"></script>
 <script src="../js/script.js"></script>
 
-<div class="step" ng-app="mainMod">
+<div class="step" ng-app="mainMod" ng-controller="modalController as modal">
 
 	<div class="steptitle">
-		<a href="#" ng-click="mainCtrl.hideTable(false); mainCtrl.log();"><i class="ionicons ion-android-close floatright"></i></a>
+		<a href="#" ng-click="mainCtrl.hideTable(false);"><i class="ionicons ion-android-close floatright"></i></a>
 		<h3 class="floatleft">Step 1 - Select Furniture</h3>
 		<div class="clr"></div>
 	</div>
@@ -18,10 +18,9 @@
 	<div class="container">
 		<div class="row-fluid">
 			<div class="span12">
-				<div class="step_marker" ng-controller="modalController as modal">
+				<div class="step_marker">
 					<ul>
-						<li><input type="radio" name="step" ng-model="step"><span
-																	ng-click="modal.get_custom_specs()">1</span></li>
+						<li><input type="radio" name="step" ng-model="step" ng-click="modal.get_custom_specs()"><span>1</span></li>
 						<li><input type="radio" name="step" ng-model="step"><span>2</span></li>
 						<li><input type="radio" name="step" ng-model="step"><span>3</span></li>
 						<li><input type="radio" name="step" ng-model="step"><span>4</span></li>
@@ -34,70 +33,90 @@
 	<div class="container alignright row-btn">
 		<div class="row-fluid">
 			<div class="span12">
-				<button class="btn-gen btn-next" href="#step-2" ng-click="modal.current_step = modal.step['step2'];">Next</button>
+				<div class="button-holder">
+					<div ng-show="modal.custom_specs['step1']['n'] > 0">
+						<button class="btn-gen btn-next" href="#step-2" 
+							ng-click="modal.current_step = modal.step['step2']; modal.get_custom_specs();"
+							>Next</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="container furniture-list" ng-controller="modalController as modal">
+	<div class="container furniture-list">
 		<div class="row-fluid">
 			<div class="span3">
 				<div class="image_wrapper"
-					ng-class="{selected:modal.step1_selected == 1}"
-					ng-click="modal.set_step1_selected(1)">
+						ng-class="{selected:modal.custom_specs['step1']['n'] == 1}"
+						ng-click="modal.custom_specs['step1']['furniture'] = 'Table';modal.custom_specs['step1']['n'] = 1;">
+					<a href="#"><img src="..\images\furnitures\table.jpg" alt=""></a>
+					<div class="caption">Table</div>
+				</div>
+			</div>
+			<div class="span3">
+				<div class="image_wrapper"
+						ng-class="{selected:modal.custom_specs['step1']['n'] == 2}"
+						ng-click="['step1']['furniture'] = 'Chair';modal.custom_specs['step1']['n'] = 2;">
+					<a href="#"><img src="..\images\furnitures\chair.jpg" alt=""></a>
+					<div class="caption">Chair</div>
+				</div>
+			</div>
+			<div class="span3">
+				<div class="image_wrapper"
+						ng-class="{selected:modal.custom_specs['step1']['n'] == 3}"
+						ng-click="modal.custom_specs['step1']['furniture'] = 'Bed';modal.custom_specs['step1']['n'] = 3;">
+					<a href="#"><img src="..\images\furnitures\bed.jpg" alt=""></a>
+					<div class="caption">Bed</div>
+				</div>
+			</div>
+			<div class="span3">
+				<div class="image_wrapper"
+						ng-class="{selected:modal.custom_specs['step1']['n'] == 4}"
+						ng-click="modal.custom_specs['step1']['furniture'] = 'Shelf';modal.custom_specs['step1']['n'] = 4;">
+					<a href="#"><img src="..\images\furnitures\shelf.jpg" alt=""></a>
+					<div class="caption">Shelf</div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="row-fluid">
+			<div class="span3">
+				<div class="image_wrapper"
+						ng-class="{selected:modal.custom_specs['step1']['n'] == 5}"
+						ng-click="modal.custom_specs['step1']['furniture'] = 'Sofa';modal.custom_specs['step1']['n'] = 5;">
+					<a href="#"><img src="..\images\furnitures\sofa.jpg" alt=""></a>
+					<div class="caption">Sofa</div>
+				</div>
+			</div>
+			<div class="span3">
+				<div class="image_wrapper"
+						ng-class="{selected:modal.custom_specs['step1']['n'] == 6}"
+						ng-click="modal.custom_specs['step1']['furniture'] = 'Desk';modal.custom_specs['step1']['n'] = 6;">
+					<a href="#"><img src="..\images\furnitures\desk.jpg" alt=""></a>
+					<div class="caption">Desk</div>
+				</div>
+			</div>
+			<div class="span3">
+				<div class="image_wrapper"
+						ng-class="{selected:modal.custom_specs['step1']['n'] == 7}"
+						ng-click="modal.custom_specs['step1']['furniture'] = 'Bench';modal.custom_specs['step1']['n'] = 7;">
+					<a href="#"><img src="..\images\furnitures\bench.jpg" alt=""></a>
+					<div class="caption">Bench</div>
+				</div>
+			</div>
+			<div class="span3">
+				<div class="image_wrapper"
+					ng-class="{selected:modal.custom_specs['step1']['n'] == 8}"
+					ng-click="modal.custom_specs['step1']['furniture'] = 'Bean Bag';modal.custom_specs['step1']['n'] = 8;">
 					<a href="#">
 						<img src="..\images\furnitures\beanbag.jpeg" alt="">
 					</a>
 					<div class="caption">Bean Bag</div>
 				</div>
 			</div>
-			<div class="span3">
-				<div class="image_wrapper">
-					<a href="#"><img src="..\images\furnitures\chair.jpg" alt=""></a>
-					<div class="caption">Chair</div>
-				</div>
-			</div>
-			<div class="span3">
-				<div class="image_wrapper">
-					<a href="#"><img src="..\images\furnitures\bed.jpg" alt=""></a>
-					<div class="caption">Bed</div>
-				</div>
-			</div>
-			<div class="span3">
-				<div class="image_wrapper">
-					<a href="#"><img src="..\images\furnitures\shelf.jpg" alt=""></a>
-					<div class="caption">Shelf</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row-fluid">
-			<div class="span3">
-				<div class="image_wrapper">
-					<a href="#"><img src="..\images\furnitures\sofa.jpg" alt=""></a>
-					<div class="caption">Sofa</div>
-				</div>
-			</div>
-			<div class="span3">
-				<div class="image_wrapper">
-					<a href="#"><img src="..\images\furnitures\desk.jpg" alt=""></a>
-					<div class="caption">Desk</div>
-				</div>
-			</div>
-			<div class="span3">
-				<div class="image_wrapper">
-					<a href="#"><img src="..\images\furnitures\bench.jpg" alt=""></a>
-					<div class="caption">Bench</div>
-				</div>
-			</div>
-			<div class="span3">
-				<div class="image_wrapper">
-					<a href="#"><img src="..\images\furnitures\table.jpg" alt=""></a>
-					<div class="caption">Table</div>
-				</div>
-			</div>
 		</div>
 	</div>
 
 </div>
-<!-- step1 -->
+<!--['step1'] -->

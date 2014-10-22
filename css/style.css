@@ -266,5 +266,7 @@ ul.select-material {
       font-weight: normal; }
     .send-form div input[type='text'], .send-form div input[type='email'] {
       padding: 3px; }
+  .send-form .error {
+    background: #fcc; }
 
 /*# sourceMappingURL=style.css.map */
