@@ -24,14 +24,28 @@
 
     this.current_step = this.step['step1'];
 
-    this.custom_specs = [];
+     this.custom_specs = {
+      'step2': {'fheight': 0, 
+                      'flength': 0 }
+     };
 
-    this.checkFields = function(length, height){
-      return (isNumeric(length) || isNumeric(height))? true : false;
-    }
-   
+     this.set_custom_specs_height = function(furniture_height){
+        this.custom_specs['step2']['fheight'] = furniture_height;
+     };
+     this.set_custom_specs_length = function(furniture_length){
+        this.custom_specs['step2']['flength'] = furniture_length;
+     };
+     this.check_step2 = function(){
+        if ( this.custom_specs['step2']['fheight'] > 0 && this.custom_specs['step2']['flength'] > 0){
+          return true;
+        }else{ 
+          return false;
+        }
+     };
+
     this.get_custom_specs = function(){
-      console.log(this.custom_specs);
+      console.log('H:'+this.custom_specs['step2']['fheight'] + '\nL:' +this.custom_specs['step2']['flength']);
+      // console.log(x);
     };
   });
   // modalController

@@ -26,8 +26,8 @@
     <div class="row-fluid">
       <div class="span12">
         <button class="btn-gen btn-next" href="#step-3" 
-        ng-show=""
-        ng-click="modal.checkFields({{furniture_length}}, {{furniture_height}}); modal.current_step = modal.step['step3']"
+        ng-show="modal.check_step2()"
+        ng-click="modal.current_step = modal.step['step3']"
         >Next</button>
       </div>
     </div>
@@ -42,14 +42,16 @@
           <div class="span12">
             <label for="length"><input type="text" name="length" placeholder="Enter Length in inches" 
                                         ng-model="furniture_length" 
-                                        ng-blur="modal.checkFields({{furniture_length}}, {{furniture_height}})">
+                                        ng-bind="modal.set_custom_specs_length(furniture_length); modal.get_custom_specs()">
             </label>
           </div>
         </div>
       </div>
       <div class="span3">
         <label for="height"><input type="text" name="height" placeholder="Enter Height in inches"
-                                        ng-model="furniture_height"></label>
+                                        ng-model="furniture_height"
+                                        ng-bind="modal.set_custom_specs_height(furniture_height); modal.get_custom_specs()"
+                                        ></label>
       </div>
     </div>
   </div>
