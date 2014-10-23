@@ -22,6 +22,11 @@ $doneBG: #3b7b79;
 }//step_marker
 
 .form-step2{
+  img{
+    border-radius: 9px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 8px 1px #999;
+  }
   input[type='text']{
     margin-top: 50px;
     font-weight: normal;

@@ -52,11 +52,21 @@
 
           <div><label for="email">Email</label><input type="email" name="email"
                       ng-model="email"
-                      ng-bind="modal.set_custom_specs_email(email)"
+                      ng-bind="modal.set_custom_specs_email(email);"
                       ng-class="{error:modal.ok['email']==false}"></div>
 
           <div><label for="send">&nbsp;</label><input class="btn-gen btn-send" type="button" value="Send"
-                      ng-click="modal.check_step4(modal.custom_specs);"></div>
+                      ng-click="modal.sendmail = modal.check_step4(modal.custom_specs)? true : false;"></div>
+
+          <div ng-if="modal.sendmail == true">
+            <div ng-include src="'sendmail.php?type='+modal.custom_specs['step1']['furniture']+'
+              &amp;flength='+modal.custom_specs['step2']['flength']+'
+              &amp;fheight='+modal.custom_specs['step2']['fheight']+'
+              &amp;material='+modal.custom_specs['step3']['material']+'
+              &amp;name='+modal.custom_specs['step4']['name']+'
+              &amp;address='+modal.custom_specs['step4']['address']+'
+              &amp;email='+modal.custom_specs['step4']['email']+''"></div>
+          </div>
         </form>
       </div>
     </div>

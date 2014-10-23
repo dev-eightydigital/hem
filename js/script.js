@@ -73,26 +73,38 @@
           return false;
      };
 
+     this.sendmail = false;
+     this.mailsent = false;
      this.ok = {
       'name': true,
       'address': true,
       'email': true
      };
+
+     
      this.check_step4 = function(){
       oks = true;
-      if(this.custom_specs['step4']['name'] != null && this.custom_specs['step4']['name'] != ''){
-        this.ok['name'] = oks = true;
-      }else { this.ok['name'] = oks = false; }
 
+      if(this.custom_specs['step4']['name'] != null && this.custom_specs['step4']['name'] != ''){
+        this.ok['name'] = true;
+      }else { this.ok['name'] = false; }
+ 
       if (this.custom_specs['step4']['address'] != null && this.custom_specs['step4']['address'] != ''){
-        this.ok['address'] = oks = true;
-      }else{ this.ok['address'] = oks = false; }
+        this.ok['address'] = true;
+      }else{ this.ok['address'] = false; }
 
       if (validateEmail( this.custom_specs['step4']['email'] )){
-        this.ok['email'] = oks = true;
-      }else{ this.ok['email'] = oks = false; }
+        this.ok['email'] = true;
+      }else{ this.ok['email'] = false; }
 
+      oks = ( this.ok['name'] == true && this.ok['address'] == true && this.ok['email'] == true)? true : false;
+      
+
+        this.sendmail = oks;
+
+        console.log(this.custom_specs);
         console.log(this.ok);
+        console.log(this.sendmail);
         console.log('ok: ' + oks);
       return oks;  
      };
