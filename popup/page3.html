@@ -38,8 +38,15 @@
   <div class="container">
     <div class="row-fluid">
       <div class="span3">&nbsp;</div>
-      <div class="span6 aligncenter">
-        <img src="images/furnitures/table.jpg" alt="" width="100%">
+      <div class="span6 aligncenter mainImgDisplay">
+        <div ng-if="modal.custom_specs['step1']['n']==1"><img src="images/furnitures/table.jpg" alt="" width="100%"></div>
+        <div ng-if="modal.custom_specs['step1']['n']==2"><img src="images/furnitures/chair.jpg" alt="" width="100%"></div>
+        <div ng-if="modal.custom_specs['step1']['n']==3"><img src="images/furnitures/bed.jpg" alt="" width="100%"></div>
+        <div ng-if="modal.custom_specs['step1']['n']==4"><img src="images/furnitures/shelf.jpg" alt="" width="100%"></div>
+        <div ng-if="modal.custom_specs['step1']['n']==5"><img src="images/furnitures/sofa.jpg" alt="" width="100%"></div>
+        <div ng-if="modal.custom_specs['step1']['n']==6"><img src="images/furnitures/desk.jpg" alt="" width="100%"></div>
+        <div ng-if="modal.custom_specs['step1']['n']==7"><img src="images/furnitures/bench.jpg" alt="" width="100%"></div>
+        <div ng-if="modal.custom_specs['step1']['n']==8"><img src="images/furnitures/cabinet.jpg" alt="" width="100%"></div>
       </div>
       <div class="span3">&nbsp;</div>
     </div>
