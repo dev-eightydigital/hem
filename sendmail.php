@@ -1,8 +1,4 @@
 <?php
-echo '<script type="text/javascript">
-	alert(\'hello\');
-</script>
-';
 $to = 'testmail@mail.com';
 
 // from 
@@ -25,7 +21,7 @@ $msg = "My Furniture Specs:" . "\n\n" .
 		"Address: " . $myFurniture['address'] . "\n" .
 		"Email: " . $myFurniture['email'] . "\n" .
 
-		"Type: " . $myFurniture['type'] . "\n" .
+		"Furniture Type: " . $myFurniture['type'] . "\n" .
 		"Dimensions: " . $myFurniture['dimensions'] . "\n" .
 		"Material: " . $myFurniture['material'] . "\n";
 
